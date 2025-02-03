@@ -1,22 +1,17 @@
-<p-menubar [model]="items">
-  <ng-template #start>
-    <!--<p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />-->
-
-  </ng-template>
-  <ng-template #item let-item let-root="root">
-    <a pRipple class="flex items-center p-menubar-item-link" [routerLink]="item.routerLink">
-      <span [ngClass]="[item.icon]" *ngIf="item.icon != undefined"></span>
-      <span>{{ item.label }}</span>
-      <p-badge *ngIf="item.badge" [ngClass]="{ 'ml-auto': !root, 'ml-2': root }" [value]="item.badge" />
-      <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
-      <i *ngIf="item.items" [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"></i>
-    </a>
-  </ng-template>
-  <ng-template #end>
-    <div class="flex items-center gap-2">
-      <input type="text" pInputText placeholder="Search" class="w-36" />
-      <p-button [icon]="icon" (onClick)="toggleDarkMode()" />
-
+<h1 style="text-align:center">Home</h1>
+<!--<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+  <ng-template #header>-->
+    <!--<img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />-->
+  <!--</ng-template>
+  <ng-template #title> SMW-Pack </ng-template>
+  <ng-template #subtitle> Componenten für Angular </ng-template>
+  <p>
+    
+  </p>-->
+  <!--<ng-template #footer>
+    <div class="flex gap-4 mt-1">
+      <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+      <p-button label="Save" class="w-full" styleClass="w-full" />
     </div>
-  </ng-template>
-</p-menubar>
+  </ng-template>-->
+<!--</p-card>-->
