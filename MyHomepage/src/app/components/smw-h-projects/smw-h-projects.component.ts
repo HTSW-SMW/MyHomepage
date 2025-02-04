@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Card } from '../../models/card.model';
+import { Link } from '../../models/link.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'smw-h-projects',
@@ -8,24 +11,24 @@ import { Component } from '@angular/core';
   styleUrl: './smw-h-projects.component.css'
 })
 export class SmwHProjectsComponent {
-  products: any[] = [
+  datas: Card[] = [
     {
       name: "SMW-PACK",
       sub: "Angular Components",
-      desc: "Enthält einige Componenten und Styles",
-      link: "https://www.npmjs.com/package/smw-pack"
+      desc: ["Enthält einige Componenten und Styles"],
+      link: new Link("https://www.npmjs.com/package/smw-pack", true)
     },
     {
       name: "GRapExtens",
       sub: "C# Lizenzmanager",
-      desc: "Lizensiert die Componenten und erweitert die Controllerfuntionen in ASP.NET Core bietet zudem weitere Funktionen an",
-      link: "https://www.nuget.org/packages/GRapExtens"
+      desc: ["Lizensiert die Componenten und erweitert die Controllerfuntionen in ASP.NET Core bietet zudem weitere Funktionen an"],
+      link: new Link("https://www.nuget.org/packages/GRapExtens", true)
     }
   ];
 
-  responsiveOptions: any[] | undefined;
-  constructor() {
 
+  responsiveOptions: any[] | undefined;
+  constructor(public httpclient: HttpClient) {
     this.responsiveOptions = [
       {
         breakpoint: '1700px',

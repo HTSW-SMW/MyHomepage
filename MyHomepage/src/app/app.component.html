@@ -14,11 +14,29 @@
   </ng-template>
   <ng-template #end>
     <div class="flex items-center gap-2">
-      <input type="text" pInputText placeholder="Search" class="w-36" />
+      <p-iconfield>
+        <p-autocomplete [(ngModel)]="value" [suggestions]="searchresults" (completeMethod)="search($event)" optionLabel="keyword">
+          <ng-template let-item #item>
+            <div class="flex items-center gap-2 w-full" [routerLink]="item.link">
+              <a [routerLink]="item.link" class="w-full">{{ item.keyword }}</a>
+            </div>
+          </ng-template>
+          <ng-template #header>
+            <div class="font-medium px-3 py-2">Suchergebnisse</div>
+          </ng-template>
+          <!--<ng-template #footer>
+            <div class="px-3 py-3">
+              <p-button label="Add New" fluid severity="secondary" text size="small" icon="pi pi-plus" />
+            </div>
+          </ng-template>-->
+        </p-autocomplete>
+        <p-inputicon styleClass="pi pi-search" />
+      </p-iconfield>
       <p-button [icon]="icon" (onClick)="toggleDarkMode()" />
 
     </div>
   </ng-template>
 </p-menubar>
+
 
 <router-outlet />

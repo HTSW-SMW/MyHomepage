@@ -15,3 +15,8 @@
     </div>
   </ng-template>-->
 <!--</p-card>-->
+<div class="flex">
+  <ng-content *ngFor="let card of cards">
+    <smw-h-card [data]="card"></smw-h-card>
+  </ng-content>
+</div>

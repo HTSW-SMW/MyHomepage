@@ -14,6 +14,13 @@
       "name": "localhost (Chrome)",
       "url": "http://localhost:56733",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "brave",
+      "request": "launch",
+      "name": "localhost (Brave)",
+      "url": "http://localhost:56733",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }

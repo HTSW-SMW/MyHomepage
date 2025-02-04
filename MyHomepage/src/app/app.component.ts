@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+interface AutoCompleteCompleteEvent {
+  originalEvent: Event;
+  query: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -10,6 +14,18 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent implements OnInit {
   items: MenuItem[] | undefined;
 
+  searchresults: any[] = [];
+
+  value: any;
+  index: { keyword: string, link: string }[] = [
+    { keyword: "Projekte", link: "/Projects" },
+    { keyword: "Lizenz", link: "/Projects" },
+    { keyword: "Angular", link: "/Projects" }
+  ]
+
+  search(event: AutoCompleteCompleteEvent) {
+    this.searchresults = this.index.filter(x => x.keyword.toLowerCase().includes(event.query.toLowerCase()))//.map(item => item.keyword + '-' + item.link);
+  }
 
   ngOnInit() {
     this.items = [
