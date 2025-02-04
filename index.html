@@ -14,3 +14,21 @@
   <app-root></app-root>
 <link rel="modulepreload" href="chunk-23DKJ3E5.js"><link rel="modulepreload" href="chunk-DAQOROHW.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-CTLC6FQP.js" type="module"></script></body>
 </html>
+<script src="https://unpkg.com/static.email"></script>
+<script>
+StaticEmail({
+  // your zeit now SES enabled serverless function
+  path: '/api/paperboy',
+
+  // optional fields
+  from: 'Some Body <some@body.me>',
+  subject: 'Is it really that simple?',
+
+  // allowed content
+  html: '<strong>Great Service!</strong>',
+  md: '# Great Service!',
+  text: 'Great Service'
+})
+  .then(() => console.log('email sent 🎉'))
+  .catch(console.error);
+</script>
